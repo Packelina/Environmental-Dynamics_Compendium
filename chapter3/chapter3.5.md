@@ -430,6 +430,7 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 from scipy import sparse
 from scipy.sparse.linalg import spsolve
+from pathlib import Path
 
 # input physical parameters
 kx = 1e-7 # permeability on x-direction
@@ -441,8 +442,19 @@ matplotlib.rc('xtick', labelsize=18)
 matplotlib.rc('ytick', labelsize=18)
 import matplotlib.tri as tri
 
-p=np.loadtxt('chapter3/data/flow_tunnel_p.txt')
-t=np.loadtxt('chapter3/data/flow_tunnel_t.txt',dtype='int32')
+# Dynamically find the project root to load data safely on GitHub
+current_dir = Path.cwd()
+while not (current_dir / 'chapter3').exists():
+    if current_dir == current_dir.parent:
+        break # Safety stop
+    current_dir = current_dir.parent
+
+p_path = current_dir / 'chapter3' / 'data' / 'flow_tunnel_p.txt'
+t_path = current_dir / 'chapter3' / 'data' / 'flow_tunnel_t.txt'
+
+p = np.loadtxt(p_path)
+t = np.loadtxt(t_path, dtype='int32')
+
 nump=np.shape(p)[0]
 numt=np.shape(t)[0]
 print('The node number is:', nump)
@@ -781,9 +793,20 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import sparse
 from scipy.sparse.linalg import spsolve
+from pathlib import Path
 
-p = np.loadtxt('chapter3/data/transport_p.txt')
-t = np.loadtxt('chapter3/data/transport_t.txt', dtype='int32')
+# Dynamically find the project root to load data safely on GitHub
+current_dir = Path.cwd()
+while not (current_dir / 'chapter3').exists():
+    if current_dir == current_dir.parent:
+        break # Safety stop
+    current_dir = current_dir.parent
+
+p_path = current_dir / 'chapter3' / 'data' / 'transport_p.txt'
+t_path = current_dir / 'chapter3' / 'data' / 'transport_t.txt'
+
+p = np.loadtxt(p_path)
+t = np.loadtxt(t_path, dtype='int32')
 nump=np.shape(p)[0]
 numt=np.shape(t)[0]
 print('The node number is:', nump)
@@ -1369,10 +1392,22 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import sparse
 from scipy.sparse.linalg import spsolve
+from pathlib import Path
 
-p=np.loadtxt('chapter3/data/KBS_3_p.txt')
-t=np.loadtxt('chapter3/data/KBS_3_t.txt',dtype='int32')
-edge=np.loadtxt('chapter3/data/KBS_3_e.txt',dtype='int32')
+# Dynamically find the project root to load data safely on GitHub
+current_dir = Path.cwd()
+while not (current_dir / 'chapter3').exists():
+    if current_dir == current_dir.parent:
+        break # Safety stop
+    current_dir = current_dir.parent
+
+p_path = current_dir / 'chapter3' / 'data' / 'KBS_3_p.txt'
+t_path = current_dir / 'chapter3' / 'data' / 'KBS_3_t.txt'
+edge_path = current_dir / 'chapter3' / 'data' / 'KBS_3_e.txt'
+
+p = np.loadtxt(p_path)
+t = np.loadtxt(t_path, dtype='int32')
+edge = np.loadtxt(edge_path, dtype='int32')
 
 at=t[:,-1]
 t=t[:,0:3]
