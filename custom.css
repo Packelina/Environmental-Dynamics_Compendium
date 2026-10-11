@@ -1,0 +1,94 @@
+
+/* ----------------------------------------
+   CLASSIC GRID TABLE STYLING 
+---------------------------------------- */
+
+/* 1. Set the outer border and collapse spacing */
+article table {
+    border-collapse: collapse !important;
+    border: 1px solid #000000 !important; /* Outer edge border */
+    width: 100% !important;
+    margin-bottom: 24px !important;
+    background-color: #ffffff !important; /* Ensure white background */
+}
+
+/* 2. Add horizontal and vertical lines to all cells */
+article th, article td {
+    border: 1px solid #000000 !important; /* Inner grid lines */
+    padding: 10px 14px !important;
+    background-color: #ffffff !important; /* Forces white, removing any default zebra stripes */
+}
+
+/* 3. Style the Header: Light gray background with a thicker bottom border */
+article thead th {
+    background-color: #f4f5f7 !important; /* Light gray */
+    border-bottom: 2px solid #000000 !important; /* Thicker line under the header */
+    font-weight: bold !important;
+}
+
+
+/* ----------------------------------------
+   MERGE 3-COLUMN CATEGORY ROWS 
+---------------------------------------- */
+
+/* 1. Remove right border of the first cell (the bold category) */
+.merge-categories tbody td:first-child:has(strong) {
+    border-right: none !important;
+}
+
+/* 2. Remove left & right borders of the second cell (the middle one) */
+.merge-categories tbody td:first-child:has(strong) + td {
+    border-left: none !important;
+    border-right: none !important;
+}
+
+/* 3. Remove left border of the third cell (the last one) */
+.merge-categories tbody td:first-child:has(strong) + td + td {
+    border-left: none !important;
+}
+
+/* 4. Allow long category text to span visually across the merged cells */
+.merge-categories tbody td:first-child:has(strong) {
+    position: relative !important; /* Creates an anchor for the text */
+}
+
+.merge-categories tbody td:first-child strong {
+    position: absolute !important; /* Floats the text so it ignores the column wall */
+    white-space: nowrap !important; /* Forces the text to stay on a single line */
+    z-index: 2 !important; /* Ensures it sits on top of the empty cells */
+}
+
+/* 5. Keep the row from collapsing */
+.merge-categories tbody tr:has(td:first-child strong) td {
+    height: 42px !important; /* Restores the height since the text is floating */
+}
+
+
+/* ----------------------------------------
+   COLUMN WIDTH ADJUSTMENT 
+---------------------------------------- */
+
+/* Prevent text/math wrapping in the 1st and 2nd columns */
+.adapt-widths th:nth-child(1),
+.adapt-widths td:nth-child(1),
+.adapt-widths th:nth-child(2),
+.adapt-widths td:nth-child(2) {
+    white-space: nowrap !important;
+}
+
+/* ----------------------------------------
+   WIDEN THIRD COLUMN (Values)
+---------------------------------------- */
+
+/* Prevent wrapping and set a minimum width for the 3rd column */
+.widen-third-col th:nth-child(3),
+.widen-third-col td:nth-child(3) {
+    white-space: nowrap !important;
+    min-width: 120px !important; 
+}
+
+/* Add vertical padding to all display math containers to prevent clipping */
+div.math, .math, mjx-container, .katex-display {
+    padding-top: 0.8em !important;
+    padding-bottom: 0.8em !important;
+}

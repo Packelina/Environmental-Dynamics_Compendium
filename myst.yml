@@ -1,0 +1,97 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 56f574fe-53c3-47be-8bdd-5f2619947b21
+  title: Environmental Dynamics
+  authors:
+    - name: V. Cvetkovic
+    - name: P. Martinet
+    - name: C. Baresel
+    - name: G. Lindgren
+    - name: A. Nikolic
+    - name: S. Molin
+    - name: C. Carstens
+  numbering:
+    headings: false   # Stops MyST from adding numbers to your headings
+    table:
+      enabled: true
+      continue: true  # Keeps table counts going sequentially across separate files
+    figure:
+      enabled: true
+      continue: true  # Keeps figure counts going sequentially across separate files
+    equation:
+      enabled: true
+      continue: true  # Keeps equation counts going sequentially across separate files
+    exercise:
+      enabled: true
+      continue: true
+  bibliography:
+    - references.bib
+  # description:
+  # keywords: []
+  # authors: []
+  # github:
+  # To autogenerate a Table of Contents, run "jupyter book init --write-toc"            
+  toc:
+    - file: index.md
+    - file: chapter1.md
+      children:
+        - file: chapter1/chapter1.1.md
+        - file: chapter1/chapter1.2.md
+        - file: chapter1/chapter1.3.md
+        - file: chapter1/chapter1.4.md
+        - file: chapter1/chapter1.5.md
+        - file: chapter1/chapter1.6.md
+        - file: chapter1/chapter1.7.md
+        - file: chapter1/chapter1.8.md
+    - file: chapter2.md
+      children:
+        - file: chapter2/chapter2.1.md
+        - file: chapter2/chapter2.2.md
+        - file: chapter2/chapter2.3.md
+          title: " 2.3. Illustration examples: Surface Water"
+    - file: chapter3.md
+      children:
+        - file: chapter3/chapter3.1.md
+        - file: chapter3/chapter3.2.md
+        - file: chapter3/chapter3.3.md
+        - file: chapter3/chapter3.4.md
+        - file: chapter3/chapter3.5.md
+          title: " 3.5. Illustration examples: Subsurface Water"
+    - file: chapter4.md
+      children:
+        - file: chapter4/chapter4.1.md
+        - file: chapter4/chapter4.2.md
+        - file: chapter4/chapter4.3.md
+        - file: chapter4/chapter4.4.md
+        - file: chapter4/chapter4.5.md
+        - file: chapter4/chapter4.6.md
+          title: " 4.6. Illustration examples: Uncertainty and Variability"
+    - file: chapter5.md
+      children:
+        - file: chapter5/chapter5.1.md
+        - file: chapter5/chapter5.2.md
+        - file: chapter5/chapter5.3.md
+          title: " 5.3. Illustration examples: Ecosystems"
+    - file: chapter6.md
+      children:
+        - file: chapter6/chapter6.1.md
+        - file: chapter6/chapter6.2.md
+        - file: chapter6/chapter6.3.md
+        - file: chapter6/chapter6.4.md
+        - file: chapter6/chapter6.5.md
+    - file: chapter7.md
+      children:
+        - file: chapter7/chapter7.1.md
+        - file: chapter7/chapter7.2.md
+        - file: chapter7/chapter7.3.md
+        - file: chapter7/chapter7.4.md
+        - file: chapter7/chapter7.5.md
+
+site:
+  template: book-theme
+  options:
+    style: ./custom.css
+  # options:
+  #   favicon: favicon.ico
+  #   logo: site_logo.png
