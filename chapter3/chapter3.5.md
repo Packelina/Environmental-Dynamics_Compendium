@@ -83,56 +83,63 @@ import matplotlib.tri as tri
 import matplotlib.cm as cm
 import matplotlib.pyplot as plt
 import numpy as np
+from pathlib import Path
 
-# Load data (with a fallback path for GitHub's background build process)
-try:
-    # This path works locally in VS Code
-    p = np.loadtxt('chapter3/data/flow_tunnel_p.txt')
-    t = np.loadtxt('chapter3/data/flow_tunnel_t.txt', dtype='int32')
-except FileNotFoundError:
-    # This path works on GitHub's temporary build server
-    p = np.loadtxt('../../chapter3/data/flow_tunnel_p.txt')
-    t = np.loadtxt('../../chapter3/data/flow_tunnel_t.txt', dtype='int32')
+# 1. Dynamically find the project root (where the 'chapter3' folder lives)
+# This prevents crashes regardless of where GitHub executes the background code
+current_dir = Path.cwd()
+while not (current_dir / 'chapter3').exists():
+    if current_dir == current_dir.parent:
+        break # Safety stop if it hits the top of the hard drive
+    current_dir = current_dir.parent
 
-nump=np.shape(p)[0]
-numt=np.shape(t)[0]
+# 2. Build the guaranteed absolute paths
+p_path = current_dir / 'chapter3' / 'data' / 'flow_tunnel_p.txt'
+t_path = current_dir / 'chapter3' / 'data' / 'flow_tunnel_t.txt'
+
+# 3. Load the data
+p = np.loadtxt(p_path)
+t = np.loadtxt(t_path, dtype='int32')
+
+nump = np.shape(p)[0]
+numt = np.shape(t)[0]
 print('The node number is:', nump)
 print('The element number is:', numt)
-x=np.transpose(p[:,[0]])[0]
-y=np.transpose(p[:,[1]])[0]
+x = np.transpose(p[:, [0]])[0]
+y = np.transpose(p[:, [1]])[0]
 
-fig,ax = plt.subplots(1, 1,figsize=(10,10))
+fig, ax = plt.subplots(1, 1, figsize=(10, 10))
 plt.triplot(x, y, t)
-plt.xlabel('x[m]',fontsize=18)
-plt.ylabel('y[m]',fontsize=18)
-plt.title('mesh',fontsize=18)
+plt.xlabel('x[m]', fontsize=18)
+plt.ylabel('y[m]', fontsize=18)
+plt.title('mesh', fontsize=18)
 
 # boundary conditions
-boundary_left=[];boundary_right=[];boundary_top=[];boundary_down=[];boundary_in=[]
+boundary_left = []; boundary_right = []; boundary_top = []; boundary_down = []; boundary_in = []
 # left boundary points
 for i in range(nump):
-  if x[i]<=1e-6:
-    boundary_left.append(i)
+    if x[i] <= 1e-6:
+        boundary_left.append(i)
 
-  if x[i]>=50-1e-6:
-    boundary_right.append(i)
+    if x[i] >= 50 - 1e-6:
+        boundary_right.append(i)
 
-  if y[i]<=1e-6:
-    boundary_down.append(i)
+    if y[i] <= 1e-6:
+        boundary_down.append(i)
 
-  if y[i]>=25-1e-6:
-    boundary_top.append(i)
+    if y[i] >= 25 - 1e-6:
+        boundary_top.append(i)
 
-  d=np.sqrt((x[i]-25)**2+(y[i]-12.5)**2)
-  if x[i]>=22.5-1e-6 and x[i]<=27.5+1e-6 and y[i]>=10-1e-6 and y[i]<=12.5+1e-6 or d<=2.5+1e-6:
-    boundary_in.append(i)
+    d = np.sqrt((x[i] - 25)**2 + (y[i] - 12.5)**2)
+    if x[i] >= 22.5 - 1e-6 and x[i] <= 27.5 + 1e-6 and y[i] >= 10 - 1e-6 and y[i] <= 12.5 + 1e-6 or d <= 2.5 + 1e-6:
+        boundary_in.append(i)
 
-bc_val_left = 100 #[m] head h = 10 m
-bc_val_right = 90 #[m] head h = 9 m
+bc_val_left = 100  # [m] head h = 10 m
+bc_val_right = 90  # [m] head h = 9 m
 
-plt.plot(x[boundary_left],y[boundary_left],'ro')
-plt.plot(x[boundary_right],y[boundary_right],'go')
-plt.plot(x[boundary_in],y[boundary_in],'b.')
+plt.plot(x[boundary_left], y[boundary_left], 'ro')
+plt.plot(x[boundary_right], y[boundary_right], 'go')
+plt.plot(x[boundary_in], y[boundary_in], 'b.')
 ax.set_aspect(aspect=1)
 plt.show()
 ```
