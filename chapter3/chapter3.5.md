@@ -84,9 +84,16 @@ import matplotlib.cm as cm
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Load LOCAL data
-p=np.loadtxt('chapter3/data/flow_tunnel_p.txt')
-t=np.loadtxt('chapter3/data/flow_tunnel_t.txt',dtype='int32')
+# Load data (with a fallback path for GitHub's background build process)
+try:
+    # This path works locally in VS Code
+    p = np.loadtxt('chapter3/data/flow_tunnel_p.txt')
+    t = np.loadtxt('chapter3/data/flow_tunnel_t.txt', dtype='int32')
+except FileNotFoundError:
+    # This path works on GitHub's temporary build server
+    p = np.loadtxt('../../chapter3/data/flow_tunnel_p.txt')
+    t = np.loadtxt('../../chapter3/data/flow_tunnel_t.txt', dtype='int32')
+
 nump=np.shape(p)[0]
 numt=np.shape(t)[0]
 print('The node number is:', nump)
