@@ -87,7 +87,7 @@ def animate(i):
     if i > 0:
         s = np.random.normal(0, 1, num_of_particles)
         # Using your original math (keeping the 0* dispersion multiplier)
-        x0[:] += uy * dt + 0 * s * np.sqrt(2 * D * dt)
+        x0[:] += uy * dt + 0*s * np.sqrt(2*D * dt)
 
     # Update Left Graph
     particles.set_data(x0, y0)
