@@ -179,7 +179,7 @@ In three dimensions, we have the advective and dispersive/diffusive flux defined
 \mathbf{j}^{\mathrm{adv}} = \mathbf{v} C \qquad \mathbf{j}^{\mathrm{disp}} = -\mathbf{D} \cdot \nabla C
 :::
 
-where $\mathbf{v}$ is the mean velocity vector and $\mathbf{D}$ is a dispersion *tensor*. Typically, $\mathbf{D}$ is symmetric; hence, in 3-D we have 6 independent components. If the $x$-component of a Cartesian coordinate system is aligned parallel to $\mathbf{v}$, then $\mathbf{v} (v, 0, 0)$, where $v \equiv v_x$. Combining Eq. {eq}`eq_ade_flux_3D` with the 3-D balance law ({numref}`Eq. %s <eq_blw_3D>`) yields the following continuity equation:
+where $\mathbf{v}$ is the mean velocity vector and $\mathbf{D}$ is a dispersion *tensor*. Typically, $\mathbf{D}$ is symmetric; hence, in 3-D we have 6 independent components. If the $x$-component of a Cartesian coordinate system is aligned parallel to $\mathbf{v}$, then $\mathbf{v} (v, 0, 0)$, where $v \equiv v_x$. Combining Eq. {eq}`eq_ade_flux_3D` with the 3-D balance law (Eq. {eq}`eq_blw_3D`) yields the following continuity equation:
 
 :::{math}
 :label: eq_ade_blw_3D
@@ -288,7 +288,6 @@ The solution of Eq. {ref}`eq_diffusion_transport_single_tracer` for a tracer mas
 C(t,x) = \frac{M_0}{2\sqrt{\pi Dt}} \exp\left(-\frac{x^2}{4Dt}\right)
 :::
 
-<!-- QUESTION: variance 2Dt? -->
 with zero mean and variance $2Dt$.
 
 (sec-1-6-3-3)=

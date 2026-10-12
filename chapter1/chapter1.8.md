@@ -30,8 +30,8 @@ Similarly, if we consider a series of flow reactors, and carry out the same expe
 \mathrm{CDF}(\tau) \equiv \int_0^{\tau} p(t)dt = 1 - H(\tau)
 :::
 
-<!-- QUESTION: Should this be H(\tau)? -->
-where $H()$ is the so-called *Heaviside step function* with properties $H(x) = 1$ for $x \geq 0$ and $H(x) = 0$ for $x < 0$; the above equation indicates that all of the particles in a series of an infinite number of flow reactors arrive at the same time, namely $\tau = N/\omega$.
+<!-- CHANGE: H(x) -->
+where $H(x)$ is the so-called *Heaviside step function* with properties $H(x) = 1$ for $x \geq 0$ and $H(x) = 0$ for $x < 0$; the above equation indicates that all of the particles in a series of an infinite number of flow reactors arrive at the same time, namely $\tau = N/\omega$.
 
 (sec-1-8-2)=
 ## 1.8.2. The Marathon race
@@ -150,7 +150,7 @@ Clearly, there is a connection between the two descriptions and the transport eq
 \frac{\partial C}{\partial t} + \frac{\partial J}{\partial x} = 0
 :::
 
-where $C \sim p(X)$ and $J \sim p(\tau)$<!-- QUESTION: is it p(t) or p(tau) -->. Thus,
+where $C \sim p(X)$ and $J \sim p(\tau)$. Thus,
 
 :::{math}
 \frac{\partial p_{X}(x,t)}{\partial t} + \frac{\partial p_{\tau}(t,x)}{\partial x} = 0
@@ -250,7 +250,7 @@ D = \langle u \rangle l
 
 which means that $l$ is a characteristic length scale of the fluctuations. Some typical values for $D$ are: $D \sim  10^{-5} - 10^{-3}$ m{sup}`2`/s in air, and $D \sim 10^{-9}$ m{sup}`2`/s in water.
 
-Finally we note the analogy between the advecting tracer (or marathon runner) position $X(t)$ and the displacement $R(t)$. The position $X$ had clearly a mean defined in Eq. {ref}`eq_spatial_location_particle_mean_variance`, whereas $R$ has zero mean. However, if we subtract the mean as $X - \langle X \rangle \equiv X'$, then $X'$ and $R$ are analogous, with distinctly different behavior. In particular, we showed that $\sigma_{x}^{2} \sim t^2$<!-- QUESTION: Should it not be a capital X? -->, whereas it was shown that $\langle R \rangle \equiv \sigma_{R}^{2} \sim t$. In other words, for advective displacement of the type described in a marathon race, the displacement variance changes as time squared, which is significantly larger than for a diffusion process where it increases linearly in $t$.
+Finally we note the analogy between the advecting tracer (or marathon runner) position $X(t)$ and the displacement $R(t)$. The position $X$ had clearly a mean defined in Eq. {ref}`eq_spatial_location_particle_mean_variance`, whereas $R$ has zero mean. However, if we subtract the mean as $X - \langle X \rangle \equiv X'$, then $X'$ and $R$ are analogous, with distinctly different behavior. In particular, we showed that $\sigma_{X}^{2} \sim t^2$<!-- CHANGE: Capital X? -->, whereas it was shown that $\langle R \rangle \equiv \sigma_{R}^{2} \sim t$. In other words, for advective displacement of the type described in a marathon race, the displacement variance changes as time squared, which is significantly larger than for a diffusion process where it increases linearly in $t$.
 
 Physically, the random walk is characterized by relatively short correlation of the velocity fluctuations/variations, over a scale $l$. By contrast, each marathon runner was assumed to have a constant velocity, and the only fluctuations considered were *among* the runners. For advective transport analogous to the marathon race, the velocity was, in technical terms, assumed perfectly correlated over the entire transport domain; this is equivalent to saying that the integral scale has a correlation length on the order of, or greater than, the transport domain. Such a model is relevant for some systems that exhibit long persistence, or correlation in velocities ("channeling", "preferential flow") such as in macro-porous soils, fractured networks, and some types of granular aquifers. Other types of systems exhibit relatively short correlations and hence can be appropriately described with the diffusion (random walk) model. In other cases, the correlation may be such that actual system behaves somewhere in between the random walk and marathon models, with the displacement variance being $\sim t^m$ where $1 < m \le 2$; such behavior is referred to as "anomalous diffusion", which has been found to arise in a variety of physical systems. Considerable effort has been dedicated to statistical physics over the past three to four decades, to studying "anomalous diffusion"; these results are becoming increasingly important for environmental applications.
 

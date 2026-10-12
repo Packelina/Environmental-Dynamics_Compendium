@@ -218,9 +218,7 @@ Note that we are here only concerned with the in- and outflows of the pollutant 
 
 Taking for every part of the mass balance in words the appropriate terms described above we get
 
-<!-- SUGGESTION: Think about it -->
 :::{math}
-\tiny
 \frac{dM_{\mathrm{pollutant}}(t)}{dt} = \frac{d(C_{\mathrm{pollutant}}(t)V_{\mathrm{water}})}{dt} = C_{\mathrm{pollutant,in}}Q_{\mathrm{in}} - C_{\mathrm{pollutant,out}}(t)Q_{\mathrm{out}} - \lambda C_{\mathrm{pollutant}}V_{\mathrm{water}}
 :::
 
@@ -354,9 +352,7 @@ Conceptual model of the stream.
 
 A conceptual model of the stream is shown in {ref}`fig_stream_conceptual model`. As we have a distributed system we formulate the mass balance over a differential length of the stream and obtain (see {ref}`Section 1.6.2. <sec-1-6-2>`)
 
-<!-- SUGGESTION: Think about it -->
 :::{math}
-\tiny
 \frac{\partial C}{\partial t}Adx = v_x CA - \left(v_x C + v_x \frac{\partial C}{\partial x} dx\right)A + \left(-D_x A \frac{\partial C}{\partial x} - \left(-D_x \frac{\partial C}{\partial x} - D_x \frac{\partial^2 C}{\partial x^2} dx\right)A\right) - \lambda CAdx
 :::
 
@@ -449,7 +445,7 @@ In GIS, data (e.g., elevation, vegetation type, flow direction) is stored togeth
 Digital elevation model of the Norrström basin.
 :::
 
-Each GIS cell is represented by four flow reactors (described in {ref}`Section 1.6. <sec-1-6>` for a general case, and for a lake in the {ref}`example above <sec-2-1-5-1>`)<!-- SUGGESTION: What about referencing it as well? -->. One flow reactor represents the soil sub-system, one the shallow groundwater subsystem, one the deep groundwater sub-system, and one the surface water sub-system. There are external in- and outflows from each of these sub-systems as shown in {ref}`fig_basin_conceptual_model_POLFLOW`. Moreover, there are denitrification reactions within these sub-systems. The denitrification depends on several parameters like the slope and the texture of the soil. For each sub-system the reactions are either parameterized or modeled differently.
+Each GIS cell is represented by four flow reactors (described in {ref}`Section 1.6. <sec-1-6>` for a general case, and for a lake in the {ref}`example above <sec-2-1-5-1>`). One flow reactor represents the soil sub-system, one the shallow groundwater subsystem, one the deep groundwater sub-system, and one the surface water sub-system. There are external in- and outflows from each of these sub-systems as shown in {ref}`fig_basin_conceptual_model_POLFLOW`. Moreover, there are denitrification reactions within these sub-systems. The denitrification depends on several parameters like the slope and the texture of the soil. For each sub-system the reactions are either parameterized or modeled differently.
 
 :::{figure} ../images/fig_basin_conceptual_model_POLFLOW.png
 :label: fig_basin_conceptual_model_POLFLOW
@@ -465,7 +461,7 @@ We now set up an integral mass balance of nitrogen for the soil sub-system in on
 \frac{dM_{\mathrm{N, soil}}}{dt} = \frac{d\left(C_{\mathrm{N, soil}} V_{\mathrm{soil}}\right)}{dt} = C_{\mathrm{N, soil}}^{\mathrm{in}} Q_{\mathrm{rain}} - C_{\mathrm{N, soil}} Q_{\mathrm{gw}} - C_{\mathrm{N, soil}} Q_{\mathrm{sr}} - \lambda C_{\mathrm{N, soil}} V_{\mathrm{soil}}
 :::
 
-where the subscripts gw = groundwater, sr = surface runoff<!-- NOTE: Cehck In dollar signs but then text form or not? -->, and rain corresponds to atmospheric deposition in {ref}`fig_basin_conceptual_model_POLFLOW`. Note that we need to know the flows $Q$ for this nitrogen mass balance and thus first have to quantify these by use of a water mass balance (equations not shown). The outputs from the soil sub-system are inputs for the shallow groundwater sub-system and the surface water sub-system. Mass balances like this one are then formulated for all three subsurface systems. Note also, that this means that the flow is in steady state, but that the nitrogen transport can still be variable in time.
+where the subscripts gw = groundwater, sr = surface runoff, and rain corresponds to atmospheric deposition in {ref}`fig_basin_conceptual_model_POLFLOW`. Note that we need to know the flows $Q$ for this nitrogen mass balance and thus first have to quantify these by use of a water mass balance (equations not shown). The outputs from the soil sub-system are inputs for the shallow groundwater sub-system and the surface water sub-system. Mass balances like this one are then formulated for all three subsurface systems. Note also, that this means that the flow is in steady state, but that the nitrogen transport can still be variable in time.
 
 Until now we have only been looking at a single cell, and the next step is to link all the cells in the drainage basin to calculate the nitrogen that discharges at the outlet. The flow and transport between the cells and thus through the drainage basin is assumed to occur only through the surface water ({ref}`fig_basin_conceptual_model_POLFLOW`). Therefore we need to link only the surface water sub-systems of neighboring cells. The water flows from high elevations to lower elevations and we therefore can approximate the flow direction in every cell through the drainage basin using the elevation map (see {ref}`fig_photo_norrstroem_DEM`). This is done by the PCRaster program and yields the local drainage direction map. Such a map is shown for the south-western-most sub drainage basin of the Norrström basin ({ref}`fig_basin_local_drainage`). The water flows from the water divide depicted by black squares along the lines and leaves the subcatchment at the red arrow. For every surface water sub-system in a cell we thus have external inputs from the upstream cells and output to the downstream cell. In other words we have a system of thousands of coupled through flow reactors. Solving the water mass balance for the whole basin we obtain {ref}`fig_basin_flowrate_surface` that shows the flow rate of water through all cells in the drainage basin. Note that the flow rate is constant in time but changes from cell to cell.
 

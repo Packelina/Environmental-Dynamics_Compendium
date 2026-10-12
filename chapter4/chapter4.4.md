@@ -49,7 +49,7 @@ Dispersion can also take place on the macroscopic scale. At this scale it is cau
 :::{figure} ../images/fig_dispersion_factors.jpg
 :label: fig_dispersion_factors
 :width: 500px
-Dispersion causing factors on micro- and macroscopic scales (After Kinzelbach, 1987<!-- QUESTION: Reference is missing in list -->).
+Dispersion causing factors on micro- and macroscopic scales (After @kinzelbach1987<!-- CHANGE: Looked up reference from the internet -->).
 :::
 
 There is another process, independent of the flow of the groundwater, and that is **diffusion**. By simplifying the contaminant to a single ion, for example the chloride ion (seawater intrusion) and looking at it on a molecular scale, we would see the ions moving around in a pattern that would seem random. Now since the ions have the same charge they would be repelled by each other, hence the trend of movement would be towards areas of less concentration of chloride ions. This means that the contaminant is transported from areas of high concentration to areas of low concentrations. This is called diffusion and is described by Fick's law (see {ref}`Section 1.6.2. <sec-1-6-2>`). It can also be described using a stochastic approach called a "random walk" (see {ref}`Section 1.8.3.2. <sec-1-8-3-2>`). When modeling these processes, they are usually combined into one property called dispersion coefficient expressed by $D= \alpha v + D^{*}$. Where $\alpha v$ is the dynamic dispersivity (characteristic property of the porous medium, scale dependent), $D^*$ is the coefficient of molecular diffusion for the solute in porous medium.
@@ -59,7 +59,7 @@ There is another process, independent of the flow of the groundwater, and that i
 
 When a contaminant moves through porous medium it also interacts with the medium itself. We can use the general terms **sorption or retardation** (parameter $R$) to describe the process where the movement of pollutants in groundwater is slowed down (retarded) relative to an inert (non-reacting) solute (An inert solute would be subject to dispersion and diffusion.). The sorption processes can be divided in absorption, adsorption and ion exchange.
 
-**Reactions** (parameter $r$), a term which sometimes is also used for sorption processes, includes among others biodegradation, hydrolysis, redox reactions, and volatilization. Reactions usually reduce the solute concentration but may however also increase the dissolved contaminant concentration. More about the affects of the different transport processes on the solute transport in groundwater can be studied with help of the Transport Guide[^transport_guide] on the course homepage[^course_homepage] . {ref}`fig_BTC_different_transports` provides an example of the various transport mechanisms.
+**Reactions** (parameter $r$), a term which sometimes is also used for sorption processes, includes among others biodegradation, hydrolysis, redox reactions, and volatilization. Reactions usually reduce the solute concentration but may however also increase the dissolved contaminant concentration.<!-- CHANGE: Deleted "More about the affects of the different transport processes on the solute transport in groundwater can be studied with help of the Transport Guide[^transport_guide] on the course homepage[^course_homepage]" --> {ref}`fig_BTC_different_transports` provides an example of the various transport mechanisms.
 
 :::{figure} ../images/fig_BTC_different_transports.png
 :label: fig_BTC_different_transports
@@ -325,6 +325,6 @@ b) the concentration, $C$, at the outlet of the column (in g/l water) when 20 mi
 :::::
 
 
-<!-- NOTE: Links are not up to date anymore! -->
-[^transport_guide]: http://www.lwr.kth.se/Grundutbildning/AE2201/Topics/Groundwater/Applets/Transport/_Guide/_Website/01-Index.htm
-[^course_homepage]: http://www.lwr.kth.se/Grundutbildning/AE2201
+<!-- CHANGE: Delete "[^transport_guide]: http://www.lwr.kth.se/Grundutbildning/AE2201/Topics/Groundwater/Applets/Transport/_Guide/_Website/01-Index.htm
+[^course_homepage]: http://www.lwr.kth.se/Grundutbildning/AE2201" -->
+

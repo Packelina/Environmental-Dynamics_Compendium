@@ -21,7 +21,7 @@ where $z$ is the elevation of the measurement point, $p$ is the fluid pressure (
 \Delta h = (z_{1} + \psi_{1}) - (z_{2} + \psi_{2})
 :::
 
-Assuming that the aquifer is unconfined we could estimate the groundwater contour lines and the main groundwater flow direction, which is perpendicular to the groundwater contour lines. (You may use the groundwater contour line estimation applet[^gw_contourline_estimation_app] on the course homepage[^course_homepage] for further studies!). In the case of a confined aquifer the contour lines would represent the hydraulic head, not the actual groundwater surface.
+Assuming that the aquifer is unconfined we could estimate the groundwater contour lines and the main groundwater flow direction, which is perpendicular to the groundwater contour lines.<!-- CHANGE: Deleted: "(You may use the groundwater contour line estimation applet[^gw_contourline_estimation_app] on the course homepage[^course_homepage] for further studies!)." -->  In the case of a confined aquifer the contour lines would represent the hydraulic head, not the actual groundwater surface.
 
 :::{figure}
 :label: fig_groundwater_pressure
@@ -96,7 +96,6 @@ After deciding about the main characteristics of our problem, the first step in 
 
 Our aim is of course to solve the flow equation. In cases with simple geometries, homogeneous conditions and given boundary and initial conditions we may use analytical solution methods. For more complex problems, such as for three-dimensional contaminant transport, we have to use numerical solutions.
 
-<!-- SUGGESTION: Can make it look like that -> No numbering, its the only example -->
 ::::{admonition} 📝 **Example: Simple model**
 :class: seealso
 :icon: false
@@ -291,7 +290,7 @@ b) Porosity, hydraulic gradient, hydraulic conductivity and transmissivity.
 :::::
 
 
-<!-- NOTE: Links are not up to date anymore! -->
-[^gw_contourline_estimation_app]: http://www.lwr.kth.se/Grundutbildning/AE2201/Topics/Groundwater/Applets/Contour_lines/contour.htm
-[^course_homepage]: http://www.lwr.kth.se/Grundutbildning/AE2201
+<!-- CHANGE: Deleted:"[^gw_contourline_estimation_app]: http://www.lwr.kth.se/Grundutbildning/AE2201/Topics/Groundwater/Applets/Contour_lines/contour.htm
+[^course_homepage]: http://www.lwr.kth.se/Grundutbildning/AE2201" -->
+
 [^Darcys_law]: Eq. {ref}`eq_darcys_law` is obtained from the momentum balance for slow/laminar flow where $v \sim dp/dx$ ({ref}`Section 1.4.3 <sec-1-4-3>`)

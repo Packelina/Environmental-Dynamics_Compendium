@@ -47,9 +47,7 @@ project:
     - file: chapter2.md
       children:
         - file: chapter2/chapter2.1.md
-        - file: chapter2/chapter2.2.md
-        - file: chapter2/chapter2.3.md
-          title: " 2.3. Illustration examples: Surface Water"
+        - file: chapter2/chapter2.2.md        
     - file: chapter3.md
       children:
         - file: chapter3/chapter3.1.md
@@ -57,7 +55,7 @@ project:
         - file: chapter3/chapter3.3.md
         - file: chapter3/chapter3.4.md
         - file: chapter3/chapter3.5.md
-          title: " 3.5. Illustration examples: Subsurface Water"
+          title: " 3.5. Illustration examples: Surface Water"        
     - file: chapter4.md
       children:
         - file: chapter4/chapter4.1.md
@@ -66,7 +64,9 @@ project:
         - file: chapter4/chapter4.4.md
         - file: chapter4/chapter4.5.md
         - file: chapter4/chapter4.6.md
-          title: " 4.6. Illustration examples: Uncertainty and Variability"
+          title: " 4.6. Illustration examples: Subsurface Water"
+        - file: chapter4/chapter4.7.md
+          title: " 4.7. Illustration examples: Uncertainty and Variability"
     - file: chapter5.md
       children:
         - file: chapter5/chapter5.1.md

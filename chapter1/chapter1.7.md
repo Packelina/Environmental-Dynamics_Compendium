@@ -83,7 +83,6 @@ The solution can easily be found as
 \mathrm{B} = C_{\mathrm{T}} - \mathrm{A}
 :::
 
-<!-- QUESTION: Do you prefer hat or widehat? -->
 We observe that after a long period of time, the function $[\mathrm{A}](t)$ and $[\mathrm{B}](t)$ tend asymptotically to some constants $[\hat{\mathrm{A}}]$ and $[\hat{\mathrm{B}}]$. At equilibrium ($d[\mathrm{A}]/dt = d[\mathrm{B}]/dt = 0$), and we have the equilibrium constant
 
 :::{math}

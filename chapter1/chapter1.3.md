@@ -71,7 +71,7 @@ Consider a one-dimensional system through which the quantity $\Phi$ is propagate
 1-D box with cross-section A.
 :::
 
-% TO-DO: Math or not math in brackets?
+<!-- NOTE: Math or not math in brackets? -->
 We first define $\varphi$ as a density of $\Phi$ , i.e., $\Phi$ per unit volume. Then, we define the flux $j$ as discharge per unit cross-sectional area. Finally, we define the sink/source term for the control volume. Thus, in terms of units, [$\varphi$] = [$\Phi$/[L{sup}`3`]], [j] = [J/[L{sup}`2`]] and [s] = [S/[L{sup}`3`]] .
 
 Using the basic rules of differentiation, we write the balance law (Eq. {ref}`eq_blw_integral`) for the infinitesimal control volume in {ref}`fig_box_1D` as
